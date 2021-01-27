@@ -986,11 +986,7 @@ window.__require = function e(t, n, o) {
                     }).to(1, {
                         scale: .9
                     }).union().repeatForever().start()
-                }, t.prototype.update = function(e) {}, t.prototype.adsButtonFunc2 = function() {
-                    window.location.href = "https://activity.doumobfour.club/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=189da8b9d29788c1cf058587fa2f7b9c&1=1"
-                }, t.prototype.bannerButtonFunc = function() {
-                    window.location.href = "https://interaction.clotfun.online/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=1baa3dd0d2eeb6e18a5f7a6d6e410e1a&from=H5&1=1"
-                }, t.prototype.ShowFailedUi = function(e, t) {
+                }, t.prototype.update = function(e) {},  t.prototype.ShowFailedUi = function(e, t) {
                     var n = this;
                     this.scheduleOnce(function() {
                         r.default.Instance.HideScorePanel(), n.levelTxt.string = r.default.Instance.level.toString(), n.scoreLabel.string = s.default.score.toString(), n.highScoreLabel.string = t, n.resultTxt.string = n.GetContentByScore(e), n.overTxt.string = "\u5f53\u524d\u5173\u5361\u5df2\u5b8c\u6210" + Math.floor(r.default.Instance.nowYQ / r.default.Instance.passlevelYQ * 100) + "%", n.canClick = !1, n.levelTxt.string = e, n.bgMask.runAction(cc.fadeTo(.36, 150)), n.scheduleOnce(function() {
@@ -1768,16 +1764,16 @@ window.__require = function e(t, n, o) {
             play: function() {
                 console.log(1);
                 var e = this;
-                // adBreak({
-                //     type: "next",
-                //     name: "restart-game",
-                //     beforeBreak: function() {
-                //         e.enableButtons()
-                //     },
-                //     afterBreak: function() {
-                //         e.enableButtons()
-                //     }
-                // })
+                adBreak({
+                    type: "next",
+                    name: "restart-game",
+                    beforeBreak: function() {
+                        e.enableButtons()
+                    },
+                    afterBreak: function() {
+                        e.enableButtons()
+                    }
+                })
             },
             enableButtons: function() {},
             addTouchEvents: function() {
@@ -1910,7 +1906,7 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.update = function(e) {
                     this.UpdateScoreLabel(e), this.lerpCtrl && this.lerpNumFunc(this.passlevelYQ), this.levelPanel.children[1].getComponent(cc.Label).string = s.default.Instance.GetLevel().toString()
                 }, t.prototype.adsButtonFunc = function() {
-                    if(b.default.Instance.targetFruit.name==='') return;
+                    if(!b.default.Instance.targetFruit||!b.default.Instance.targetFruit.name) return;
                     b.default.Instance.targetFruit.destroy()
                     b.default.Instance.createOneFruit(Math.floor(Math.random()*6))
                 }, t.prototype.TestPasslevel = function() {
