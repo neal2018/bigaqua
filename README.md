@@ -3,5 +3,3 @@
 only support on mobile
 
 https://neal2018.github.io/bigaqua/
-
-http://aqua.jiarangachi.icu/
